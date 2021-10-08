@@ -1,65 +1,47 @@
 const express = require('express');
 const app = express();
-
-const port = process.env.PORT || 3000;
-
+const rateLimit = require('express-rate-limit');
+const port = process.env.PORT;
 require('./db/mongoose');
-
-const Item = require('./models/item')
-
-const validator = require('validator')
-
+const path = require('path');
+const allRouter = require('./routers/all');
+const wordsRouter = require('./routers/words');
+const sampleRouter = require('./routers/sample');
+const publicFolder = path.join(__dirname, 'public');
 
 app.use(express.json());
 
 // just get methods
-app.use((req,res,next) => {
-  if(req.method !== 'GET') {
+app.use((req, res, next) => {
+  if (req.method !== 'GET') {
     res.status(403).json({
       statusCode: 403,
       header: 'Unauthorized',
       error: 'ONLY GET REQUESTS ARE ENABLED',
-    })
+    });
   } else {
-    next()
+    next();
   }
-})
+});
+const apiRequestLimiter = rateLimit({
+  windowMs: 1 * 60 * 1000,
+  max: 100,
+  handler: function(req, res) {
+    return res.status(429).json({
+      error: 'You sent too many requests. Please wait a while then try again',
+    });
+  },
+});
 
-// Get 1 one number as default
-// Get /words?number={number}
-app.get("/words",async (req,res) => {
-    let def = 1
-    if(req.query.number !== undefined) {
-        if(validator.default.isNumeric(req.query.number)) {
-            def = parseInt(req.query.number)
-        }
-    }
+app.use(apiRequestLimiter);
+app.use(allRouter);
+app.use(wordsRouter);
+app.use(sampleRouter);
+app.get('/', function(req, res) {
+  res.sendFile(path.join(publicFolder, 'index.html'));
+});
 
-
-    try {
-        const data = await Item.aggregate([{$sample:{size:def}}])
-
-        res.set({
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*",
-        });
-
-
-        res.send(data)
-    } catch (e) {
-        res.status(500).send(e)
-    }
-})
-// Returns all data 90000+ words 23MB
-app.get('/all', async (req,res) => {
-    try {
-        const data = await Item.find({})
-        res.send(data)
-    } catch (e) {
-        res.status(500).send(e)
-    }
-})
-
+app.use('/', express.static(publicFolder));
 app.listen(port, () => {
   console.log('Server is up on port http://localhost:' + port);
 });

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Document</title>
+    <link
+            crossorigin="anonymous"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+            integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+            referrerpolicy="no-referrer"
+            rel="stylesheet"
+    />
+    <link href="css/styles.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="welcome">
+    <h1 class="welcome-header">Random Turkish Word API</h1>
+    <p class="welcome-description">
+        TR: [
+        <a class="inline-link" href="https://github.com/ogun" target="_blank"
+        >Ogün</a
+        >'ün
+        <a
+                class="inline-link"
+                href="https://github.com/ogun/guncel-turkce-sozluk"
+                target="_blank"
+        >guncel-turkce-sozluk</a
+        >
+        reposunda TDK websitesini scrape'leyerek oluşturduğu veritabanını
+        kullanarak bir kelime ile alakalı rastgele birtakım veri döndüren bir
+        API. ]
+    </p>
+    <p class="welcome-description">
+        EN: [ An API that returns some random data related to a word using the
+        database that
+        <a class="inline-link" href="https://github.com/ogun" target="_blank"
+        >Ogun</a
+        >
+        created by scraping the TDK website in the
+        <a
+                class="inline-link"
+                href="https://github.com/ogun/guncel-turkce-sozluk"
+                target="_blank"
+        >guncel-turkce-sozluk</a
+        >
+        repo. ]
+    </p>
+</div>
+<div class="usage">
+    <div class="container">
+        <h1 class="welcome-header">Usage</h1>
+        <div class="examples">
+            <div class="example-box">
+                <p class="inst">Send GET Request to</p>
+                <p>(where number = number of words returned. default=1)</p>
+                <div class="box">
+                    <p class="box-text">/words?number=5</p>
+                </div>
+            </div>
+            <div class="example-box">
+                <p class="inst">If you want all the stored words:</p>
+                <p>92.406 record</p>
+                <div class="box">
+                    <p class="box-text">/all</p>
+                </div>
+            </div>
+            <div class="example-box">
+                <p class="inst">For sample data:</p>
+                <div class="box">
+                    <p class="box-text">/sample</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <a
+                class="footer-link"
+                href="https://github.com/mtevfik41/random-turkish-word-api"
+                target="_blank"
+        ><i class="fab fa-github"></i> Github</a
+        >
+    </footer>
+</div>
+<script src="js/index.js"></script>
+</body>
+</html>
