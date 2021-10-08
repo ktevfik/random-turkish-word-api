@@ -1,109 +1,108 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: "Lato", sans-serif;
-    font-size: 100%;
+  font-family: "Lato", sans-serif;
+  font-size: 100%;
 }
 
 .welcome-group {
-    position: relative;
+  position: relative;
 }
 
 .welcome {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 25vh;
-    background: rgb(47, 93, 98);
-    background: linear-gradient(
-            90deg,
-            rgba(47, 93, 98, 1) 0%,
-            rgba(94, 139, 126, 1) 100%
-    );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgb(47, 93, 98);
+  background: linear-gradient(
+    90deg,
+    rgba(47, 93, 98, 1) 0%,
+    rgba(94, 139, 126, 1) 100%
+  );
+  padding: 35px;
 }
 
 .inline-link {
-    color: rgb(255, 255, 255);
-    font-size: 1.3rem;
-    text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 1.3rem;
+  text-decoration: none;
 }
 
 .inline-link:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .welcome-header {
-    margin-bottom: 25px;
-    font-size: 2.7rem;
-    color: #182c25;
+  margin-bottom: 25px;
+  font-size: 2.7rem;
+  color: #182c25;
 }
 
 .welcome-description {
-    font-size: 1.2rem;
-    color: #000;
+  font-size: 1.2rem;
+  color: #000;
 }
 
 .usage {
-    padding: 50px;
-    background-color: #dfeeea;
-    height: 75vh;
-    position: relative;
+  padding: 50px;
+  background-color: #dfeeea;
+  min-height: 77.8vh;
+  position: relative;
 }
 
 .container {
-    max-width: 1100px;
-    margin: 0 auto 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  max-width: 1100px;
+  margin: 0 auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .example-box {
-    width: 500px;
 }
 
 .inst {
-    font-size: 1.1rem;
-    font-family: inherit;
+  font-size: 1.1rem;
+  font-family: inherit;
 }
 
 .box {
-    width: 100%;
-    background-color: #2f5d62;
-    padding: 20px;
-    margin: 15px 0 15px 0;
-    text-align: center;
+  width: 100%;
+  background-color: #2f5d62;
+  padding: 20px;
+  margin: 15px 0 15px 0;
+  text-align: center;
 }
 
 .box-text {
-    font-size: 1.3rem;
-    color: #fff;
+  font-size: 1.3rem;
+  color: #fff;
 }
 
 .footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    bottom: 2%;
-    left: 50%;
-    transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .footer-link {
-    color: #000;
-    text-decoration: none;
-    font-size: 1.1rem;
+  color: #000;
+  text-decoration: none;
+  font-size: 1.1rem;
 }
 
 .footer-link:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
